@@ -1,0 +1,28 @@
+<div *ngIf="band">
+
+  <h2>Detalles de {{band.name | uppercase}} </h2>
+  <!-- imagen -->
+  <div>
+    <img src="{{band.urlImagen}}" alt="Logo">
+    <!-- <a href="{{band.url}}">Página oficial</a> -->
+  </div>
+
+  <!-- nombre -->
+  <div>
+    <label for="band-name">Nombre de la banda: </label>
+    <input id="band-name" [(ngModel)]="band.name" placeholder="Nombre"/>
+  </div>
+
+  <!-- web -->
+  <div>
+    <label for="band-url">Más información: </label>
+    <a href="{{band.url}}">Página oficial</a>
+  </div>
+
+  <!-- video -->
+  <div>
+    <label for="band-video">¿Quieres escucharlo? </label>
+    <a href="{{band.urlVideo}}">Tienes mucho ruido aquí!</a>
+  </div>
+  <button (click)="goBack()">Volver</button>
+</div>
