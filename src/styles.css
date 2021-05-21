@@ -80,3 +80,8 @@ input[type="text"] {
   width: 100%;
   padding: .5rem;
 }
+
+
+body{
+  background: rgb(190, 190, 190);
+}

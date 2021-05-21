@@ -9,11 +9,37 @@ input {
 }
 button {
   margin-top: 20px;
-  background-color: #eee;
+  background-color: rgb(69, 132, 226);
+  color: white;
   padding: 1rem;
   border-radius: 4px;
   font-size: 1rem;
 }
+
+.dangerButton {
+  margin-top: 20px;
+  background-color: rgb(223, 132, 132);
+  color: black;
+  border-width: 0.2em;
+  border-style: solid;
+  border-color: rgb(121, 46, 46);
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.successButton {
+  margin-top: 20px;
+  color: black;
+  background-color: rgb(161, 223, 132);
+  padding: 1rem;
+  border-radius: 4px;
+  border-width: 0.2em;
+  border-style: solid;
+  border-color: rgb(89, 126, 72);
+  font-size: 1rem;
+}
+
 button:hover {
   background-color: #cfd8dc;
 }
@@ -22,3 +48,10 @@ button:disabled {
   color: #ccc;
   cursor: auto;
 }
+
+/* Esto controla el tamaño de las imágenes */
+img {
+  max-width: 15em;
+  max-height: 15em;
+}
+

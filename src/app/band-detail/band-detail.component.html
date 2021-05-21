@@ -26,3 +26,75 @@
   </div>
   <button (click)="goBack()">Volver</button>
 </div>
+
+<h2>¿Conoces una banda que no esté en el listado? AÑÁDELA</h2>
+
+<div *ngIf="band">
+  <div *ngIf="band">
+    <!-- imagen -->
+    <div>
+      <label for="band-name">ID de la banda: </label>
+      <input id="band-name" [(ngModel)]="this.id" placeholder="ID"/>
+    </div>
+
+
+  <!-- imagen -->
+  <div>
+    <label for="band-name">Logo de la banda: </label>
+    <input id="band-name" [(ngModel)]="this.urlImagen" placeholder="Logo"/>
+  </div>
+
+  <!-- nombre -->
+  <div>
+    <label for="band-name">Nombre de la banda: </label>
+    <input id="band-name" [(ngModel)]="this.name" placeholder="Nombre"/>
+  </div>
+
+  <!-- web -->
+  <div>
+    <label for="band-name">Web de la banda: </label>
+    <input id="band-name" [(ngModel)]="this.url" placeholder="Web"/>
+  </div>
+
+  <!-- video -->
+  <div>
+    <label for="band-name">Video de la banda: </label>
+    <input id="band-name" [(ngModel)]="this.urlVideo" placeholder="Web"/>
+  </div>
+  <button class="successButton" (click)="submit()">Dale Caña!</button>
+</div>
+
+<hr>
+<h2>¿Ésta banda no debería ocupar el lugar de honor? BÁJALE LOS HUMOS</h2>
+<button class="dangerButton" (click)="deleteBand()">Adiós Pringados!</button>
+<hr>
+<h2>¿Ups... Nos hemos equicocado? CORRÍGENOS</h2>
+
+<div *ngIf="band">
+
+  <!-- imagen -->
+  <div>
+    <label for="band-name">Logo de la banda: </label>
+    <input id="band-name" [(ngModel)]="band.urlImagen" placeholder="Logo"/>
+  </div>
+
+  <!-- nombre -->
+  <div>
+    <label for="band-name">Nombre de la banda: </label>
+    <input id="band-name" [(ngModel)]="band.name" placeholder="Nombre"/>
+  </div>
+
+  <!-- web -->
+  <div>
+    <label for="band-name">Web de la banda: </label>
+    <input id="band-name" [(ngModel)]="band.url" placeholder="Web"/>
+  </div>
+
+  <!-- video -->
+  <div>
+    <label for="band-name">Video de la banda: </label>
+    <input id="band-name" [(ngModel)]="band.urlVideo" placeholder="Web"/>
+  </div>
+  <button class="successButton" (click)="goBack()">Corregir</button>
+</div>
+

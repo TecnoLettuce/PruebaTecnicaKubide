@@ -10,16 +10,33 @@ import { BandService } from '../band.service';
   templateUrl: './band-detail.component.html',
   styleUrls: [ './band-detail.component.css' ]
 })
-export class BandDetailComponent implements OnInit {
+export class BandDetailComponent implements OnInit, Band {
+  id: number;
+  name: string;
+  url: string;
+  urlVideo: string;
+  urlImagen: string;
+
   band: Band | undefined;
 
   constructor(
     private route: ActivatedRoute,
     private bandService: BandService,
-    private location: Location
-  ) {}
+    private location: Location,
+  ) {
+    this.id = -1
+    this.name = 'undefined'
+    this.url = 'undefined'
+    this.urlImagen = 'undefined'
+    this.urlVideo = 'undefined'
+   }
 
   ngOnInit(): void {
+    this.id = -1
+    this.name = 'undefined'
+    this.url = 'undefined'
+    this.urlImagen = 'undefined'
+    this.urlVideo = 'undefined'
     this.getBand();
   }
 
@@ -31,5 +48,19 @@ export class BandDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+
+  public submit(): void {
+    this.bandService.addBand(this.id, this.name, this.url, this.urlImagen, this.urlVideo)
+    this.goBack()
+  }
+
+  public deleteBand() {
+    if (this.band?.id) {
+      let id = this.band?.id
+      this.bandService.deleteBand(id)
+    }
+    this.goBack()
   }
 }

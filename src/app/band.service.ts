@@ -21,4 +21,22 @@ export class BandService {
     const band = BANDS.find(b => b.id === id)!;
     return of(band);
   }
+
+  addBand(id: number, name: string, url: string, urlImagen: string, urlVideo: string):void {
+    BANDS.push(
+      {
+        id: id, name: name, url: url, urlVideo: urlVideo, urlImagen : urlImagen
+      }
+    )
+  }
+
+  deleteBand(id:number) {
+    const band = BANDS.find(b => b.id === id)!;
+    if (BANDS.includes(band, id)) {
+      BANDS.splice(id)
+    } else {
+      console.log('no se puede eliminar')
+    }
+
+  }
 }
